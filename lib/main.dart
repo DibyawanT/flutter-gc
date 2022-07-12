@@ -114,7 +114,7 @@ class MyApp extends StatelessWidget {
     ];
     // var data =  json.decode(orderdata);
     var rest = orderdata as List;
-    List<MyApp> list = rest.map<MyApp>((json)=>MyApp.fromJson(json)).toList();
+    List<MyApp> list = rest.map<MyApp>((json) => MyApp.fromJson(json)).toList();
 
     print(rest);
     return MaterialApp(
@@ -123,16 +123,35 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xff4682b4),
           title: Text("GeoTech Cafe"),
         ),
-        body: Center(
-          child: Container(
-            width: 300,
-            height: 50,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
-            child: Row(
-              children: [Text('LOL')],
-            ),
-          ),
+        body: Container(
+          child: ListView.builder(
+              itemCount: list.length,
+              itemBuilder: (BuildContext context, int index) {
+                return Center(
+                  child: Container(
+                    margin: const EdgeInsets.all(1.0),
+                    padding: const EdgeInsets.all(3.0),
+                    width: 300,
+                    height: 60,
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.blueAccent)),
+                    child: Row(
+                      children: [
+                        Expanded(child: Text((index + 1).toString())),
+                        Expanded(
+                          child: Text(list[index].qty.toString() +
+                              'X' +
+                              list[index].food_name),
+                        ),
+                        Expanded(
+                            child: Text(
+                                (list[index].unit_price * list[index].qty)
+                                    .toString())),
+                      ],
+                    ),
+                  ),
+                );
+              }),
         ),
       ),
     );
