@@ -123,18 +123,12 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xff4682b4),
           title: Text("GeoTech Cafe"),
         ),
-        body: Center(
-          child: Container(
-            width: 300,
-            height: 50,
-            alignment: Alignment.center,
-            decoration: BoxDecoration(border: Border.all(color: Colors.grey)),
-            child: Row(
-              children: [Text('LOL')],
-            ),
-          ),
+        body:ListView.builder(
+          itemCount: list.length,
+          itemBuilder: (BuildContext context,int index){
+            return Card(child: Text(list[index].food_name));
+          }),
         ),
-      ),
-    );
+      );
   }
 }
