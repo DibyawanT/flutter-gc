@@ -119,11 +119,13 @@ class ListViewWidget extends StatelessWidget {
       child: ListView.builder(
           itemCount: list.length,
           itemBuilder: (BuildContext context, int index) {
-            return Center(
-              child: ListCardWidget(
-                  food_name: list[index].food_name,
-                  qty: list[index].qty,
-                  total_amount: list[index].total_amount),
+            return Container(
+              child: Center(
+                child: ListCardWidget(
+                    food_name: list[index].food_name,
+                    qty: list[index].qty,
+                    total_amount: list[index].total_amount),
+              ),
             );
           }),
     );

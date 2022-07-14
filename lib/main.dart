@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:list_view/user_card_widget/user_card.dart';
 
 import 'list_view_widget/list_view.dart';
 
@@ -20,21 +21,30 @@ class MyApp extends StatelessWidget {
           backgroundColor: Color(0xff4682b4),
           title: Text("GeoTech Cafe"),
         ),
-        body: Column(
-          children: [
-            Container(height: 100, child: Text('Henlo World')),
-            Expanded(
-              child: Container(
-                decoration: BoxDecoration(
-                    border: Border.all(
-                      color: Colors.blueAccent,
-                    ),
-                    borderRadius:
-                        BorderRadius.only(topLeft: Radius.circular(50))),
-                child: ListViewWidget(),
+        body: 
+        Container(
+          color: Color(0xffABC9FF),
+          child: Column(
+            children: [
+              Container(
+                color: Color(0xffABC9FF),
+                height: 100,
+                child: UserCardWidget(emp_name: 'Dibyawan'),
               ),
-            )
-          ],
+              Expanded(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                      border: Border.all(
+                        color: Colors.white,
+                      ),
+                      borderRadius:
+                          BorderRadius.only(topLeft: Radius.circular(40))),
+                  child: ListViewWidget(),
+                ),
+              )
+            ],
+          ),
         ),
       ),
     );

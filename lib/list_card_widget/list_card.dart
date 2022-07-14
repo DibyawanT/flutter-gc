@@ -17,22 +17,42 @@ class ListCardWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(5),
+              topRight: Radius.circular(5),
+              bottomLeft: Radius.circular(5),
+              bottomRight: Radius.circular(5)),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 4,
+              blurRadius: 4,
+              offset: Offset(0, 3),
+            ),
+          ]),
       margin: const EdgeInsets.all(1.0),
       padding: const EdgeInsets.all(3.0),
       width: MediaQuery.of(context).size.width * 0.85,
       height: MediaQuery.of(context).size.height * 0.1,
-      // decoration: BoxDecoration(
-      //   border: Border.all(color: Colors.blueAccent),
-      // ),
       child: Row(
         children: [
-          Expanded(
-            flex: 1,
-            child: Image.asset(
-              'assets/favicon.png',
-              fit: BoxFit.scaleDown,
-              width: 70,
-              height: 70,
+          Container(
+            width: 50,
+            height: 50,
+            decoration: BoxDecoration(
+              color: Colors.grey[200],
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+            ),
+            child: Center(
+              child: Text(
+                qty.toString(),
+                style: TextStyle(
+                    fontWeight: FontWeight.bold, color: Colors.grey[900]),
+              ),
             ),
           ),
           Expanded(
@@ -40,16 +60,12 @@ class ListCardWidget extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisSize: MainAxisSize.min,
+              // mainAxisSize: MainAxisSize.min,
               children: [
                 Text(
                   food_name,
                   overflow: TextOverflow.fade,
                   style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-                Text(
-                  'X' + qty.toString(),
-                  overflow: TextOverflow.fade,
                 ),
               ],
             ),
@@ -57,10 +73,21 @@ class ListCardWidget extends StatelessWidget {
           Column(
             children: [
               SizedBox(height: 10),
-              Text(
-                '\$ ' + total_amount.toString(),
-                style: TextStyle(
-                    fontWeight: FontWeight.bold, color: Colors.green[900]),
+              Container(
+                width: 50,
+                decoration: BoxDecoration(
+                  color: Colors.green[100],
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(20),
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    '\₹ ' + total_amount.toString(),
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.green[900]),
+                  ),
+                ),
               ),
               SizedBox(height: 20),
               Text(
