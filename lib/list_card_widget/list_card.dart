@@ -65,7 +65,7 @@ class ListCardWidget extends StatelessWidget {
                 Text(
                   food_name,
                   overflow: TextOverflow.fade,
-                  style: TextStyle(fontWeight: FontWeight.bold),
+                  style: TextStyle(fontWeight: FontWeight.normal),
                 ),
               ],
             ),

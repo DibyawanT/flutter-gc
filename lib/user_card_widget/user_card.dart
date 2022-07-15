@@ -15,6 +15,7 @@ class UserCardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height:30),
         Row(
           children: [
             Text(
@@ -22,7 +23,7 @@ class UserCardWidget extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Helvetica',
+                fontFamily: 'Roboto',
                 color: Colors.white,
               ),
             ),
@@ -31,7 +32,7 @@ class UserCardWidget extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Helvetica',
+                fontFamily: 'Roboto',
                 color: Colors.white,
               ),
             )
@@ -44,7 +45,7 @@ class UserCardWidget extends StatelessWidget {
               style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Helvetica',
+                fontFamily: 'Roboto',
                 color: Colors.white,
               ),
             ),
