@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:list_view/dashboard/dashboard_widget.dart';
 // import 'package:list_view/email_verification_widget/email_verification.dart';
 import 'package:list_view/dashboard/user_card_widget/user_card.dart';
 import 'dashboard/email_verification_widget/email_verification.dart';
@@ -22,9 +23,25 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
 
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _selectedIndex = 0;
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
+  List<Widget> _widgetOptions = <Widget>[
+    Dashboard(),
+    EmailVerificationScreen()
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,78 +49,24 @@ class MyHomePage extends StatelessWidget {
         backgroundColor: Color(0xff4682b4),
         title: Text("GeoTech Cafe"),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage('assets/gc-bg.png'), fit: BoxFit.cover)),
-        child: Column(
-          children: [
-            Container(
-              height: 150,
-              child: UserCardWidget(emp_name: 'Dibyawan'),
-            ),
-            Expanded(
-              child: Container(
-                  decoration: BoxDecoration(
-                      color: Colors.white,
-                      border: Border.all(
-                        color: Colors.white,
-                      ),
-                      borderRadius:
-                          BorderRadius.only(topLeft: Radius.circular(40))),
-                  child: Column(
-                    children: [
-                      Container(
-                        width: 300,
-                        margin: const EdgeInsets.all(10),
-                        // ignore: sort_child_properties_last
-                        child: Row(
-                          children: [
-                            Expanded(
-                              child: Container(
-                                child: OutlinedButton(
-                                  onPressed: () => showModalBottomSheet(
-                                      context: context,
-                                      builder: (context) =>
-                                          BottomModal(Inheight: 500)),
-                                  child: Text('Month'),
-                                ),
-                              ),
-                            ),
-                            Spacer(),
-                            Expanded(
-                              child: Container(
-                                child: OutlinedButton(
-                                  onPressed: () => showModalBottomSheet(
-                                      context: context,
-                                      builder: (context) =>
-                                          BottomModal(Inheight: 250)),
-                                  child: Text('Sort'),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                        height: 30,
-                      ),
-                      Expanded(
-                          child: GestureDetector(
-                              onTap: () {
-                                Navigator.of(context).push(
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        EmailVerificationScreen(),
-                                  ),
-                                );
-                              },
-                              child: ListViewWidget())),
-                    ],
-                  )),
-            )
-          ],
-        ),
+      body: Center(
+        child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar: 
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Dashboard',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list_alt_outlined),
+            label: 'Bills',
+          )
+        ],
+        currentIndex: _selectedIndex,
+        selectedItemColor: Colors.blueAccent[400],
+        onTap: _onItemTapped,
+      ),
     );
   }
 }
