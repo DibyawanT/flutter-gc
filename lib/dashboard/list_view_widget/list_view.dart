@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:list_view/list_card_widget/list_card.dart';
-
+import 'package:list_view/dashboard/list_card_widget/list_card.dart';
 class ListViewWidget extends StatelessWidget {
   String emp_name;
   String food_name;

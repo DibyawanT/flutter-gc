@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:list_view/email_verification_widget/email_verification.dart';
-import 'package:list_view/user_card_widget/user_card.dart';
-
-import 'bottom_modal_widget/bottom_modal.dart';
-import 'list_view_widget/list_view.dart';
+// import 'package:list_view/email_verification_widget/email_verification.dart';
+import 'package:list_view/dashboard/user_card_widget/user_card.dart';
+import 'dashboard/email_verification_widget/email_verification.dart';
+import 'dashboard/bottom_modal_widget/bottom_modal.dart';
+import 'dashboard/list_view_widget/list_view.dart';
 
 void main() {
   runApp(MyApp());
@@ -64,7 +64,8 @@ class MyHomePage extends StatelessWidget {
                                 child: OutlinedButton(
                                   onPressed: () => showModalBottomSheet(
                                       context: context,
-                                      builder: (context) => BottomModal()),
+                                      builder: (context) =>
+                                          BottomModal(Inheight: 500)),
                                   child: Text('Month'),
                                 ),
                               ),
@@ -75,7 +76,8 @@ class MyHomePage extends StatelessWidget {
                                 child: OutlinedButton(
                                   onPressed: () => showModalBottomSheet(
                                       context: context,
-                                      builder: (context) => BottomModal()),
+                                      builder: (context) =>
+                                          BottomModal(Inheight: 250)),
                                   child: Text('Sort'),
                                 ),
                               ),
@@ -101,6 +103,7 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
+      bottomNavigationBar: 
     );
   }
 }
