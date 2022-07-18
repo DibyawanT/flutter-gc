@@ -1,10 +1,14 @@
-import 'package:flutter/cupertino.dart';
+// ignore_for_file: unnecessary_import
+
 import 'package:flutter/material.dart';
+// ignore: implementation_imports
 import 'package:flutter/src/foundation/key.dart';
+// ignore: implementation_imports
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:list_view/dashboard/modal_checkbox_list_widget/checkbox_list.dart';
 
 class BottomModal extends StatelessWidget {
+  // ignore: non_constant_identifier_names
   final double Inheight;
   const BottomModal({Key? key, required this.Inheight}) : super(key: key);
 
