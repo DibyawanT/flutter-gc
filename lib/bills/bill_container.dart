@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'bill_card_widget/bill_card.dart';
+
 class BillContainer extends StatelessWidget {
   const BillContainer({Key? key}) : super(key: key);
 
@@ -7,12 +9,10 @@ class BillContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Center(
-        ListView.builder(
-          itemCount: 1,
-          itemBuilder: (BuildContext context, int index) {
-            return Container(
-              child: BillCard(),
-            );
+        child:ListView.builder(
+          itemCount: 10,
+          itemBuilder: (BuildContext context,int index) {
+            return BillCard();
           },
         ),
       ),

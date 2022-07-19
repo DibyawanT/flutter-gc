@@ -19,21 +19,22 @@ class UserCardWidget extends StatelessWidget {
         Row(
           children: [
             Text(
-              'Welcome '.toUpperCase(),
+              'welcome ',
               style: const TextStyle(
-                fontSize: 25,
+                fontSize: 20,
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Roboto',
-                color: Colors.white,
+                fontStyle: FontStyle.italic,
+                fontFamily: 'Sora',
+                color: Colors.black,
               ),
             ),
             Text(
-              '$emp_name ,'.toUpperCase(),
+              '$emp_name ,',
               style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.bold,
-                fontFamily: 'Roboto',
-                color: Colors.white,
+                fontFamily: 'Sora',
+                color: Colors.black,
               ),
             )
           ],
@@ -41,12 +42,12 @@ class UserCardWidget extends StatelessWidget {
         Row(
           children: [
             Text(
-              'Your Orders Are'.toUpperCase(),
+              'Your orders are',
               style: const TextStyle(
                 fontSize: 25,
                 fontWeight: FontWeight.normal,
-                fontFamily: 'Roboto',
-                color: Colors.white,
+                fontFamily: 'Sora',
+                color: Colors.black,
               ),
             ),
           ],

@@ -2,6 +2,7 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:list_view/bills/bill_container.dart';
 import 'package:list_view/dashboard/dashboard_widget.dart';
 import 'package:list_view/dashboard/user_card_widget/user_card.dart';
 import 'dashboard/email_verification_widget/email_verification.dart';
@@ -25,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Widget> _widgetOptions = <Widget>[
     Dashboard(),
-    EmailVerificationScreen()
+    BillContainer()
   ];
   @override
   Widget build(BuildContext context) {
