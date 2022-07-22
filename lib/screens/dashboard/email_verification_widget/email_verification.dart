@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:list_view/dashboard/list_card_widget/list_card.dart';
+import 'package:list_view/screens/dashboard/list_card_widget/list_card.dart';
 import 'package:list_view/main.dart';
-import 'package:list_view/dashboard/user_card_widget/user_card.dart';
+import 'package:list_view/screens/dashboard/user_card_widget/user_card.dart';
 
 class EmailVerificationScreen extends StatefulWidget {
   const EmailVerificationScreen({Key? key}) : super(key: key);

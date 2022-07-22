@@ -4,8 +4,8 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:list_view/dashboard/user_card_widget/user_card.dart';
-import 'package:list_view/login_screen/login_screen_container.dart';
+import 'package:list_view/screens/dashboard/user_card_widget/user_card.dart';
+import 'package:list_view/screens/login_screen/login_screen_container.dart';
 
 import 'bottom_modal_widget/bottom_modal.dart';
 import 'email_verification_widget/email_verification.dart';

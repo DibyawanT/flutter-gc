@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 // ignore: implementation_imports
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:list_view/dashboard/modal_checkbox_list_widget/checkbox_list.dart';
+import 'package:list_view/screens/dashboard/modal_checkbox_list_widget/checkbox_list.dart';
 
 class BottomModal extends StatelessWidget {
   // ignore: non_constant_identifier_names

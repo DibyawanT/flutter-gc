@@ -2,12 +2,12 @@ import 'dart:convert';
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
-import 'package:list_view/bills/bill_container.dart';
-import 'package:list_view/dashboard/dashboard_widget.dart';
-import 'package:list_view/dashboard/user_card_widget/user_card.dart';
-import 'dashboard/email_verification_widget/email_verification.dart';
-import 'dashboard/bottom_modal_widget/bottom_modal.dart';
-import 'dashboard/list_view_widget/list_view.dart';
+import 'package:list_view/screens/bills/bill_container.dart';
+import 'package:list_view/screens/dashboard/dashboard_widget.dart';
+import 'package:list_view/screens/dashboard/user_card_widget/user_card.dart';
+import 'screens/dashboard/email_verification_widget/email_verification.dart';
+import 'screens/dashboard/bottom_modal_widget/bottom_modal.dart';
+import 'screens/dashboard/list_view_widget/list_view.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key}) : super(key: key);
